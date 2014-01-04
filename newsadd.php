@@ -17,7 +17,7 @@ echo '<table border="1">
 <tr><td>Title</td><td>icerik</td><td>kategori</td><td>Dasdasdas</td></tr>';
 foreach($newslist as $b){
 $kat=$category->findOne(array("_id"=>new MongoId($b['kategori'])));
-echo '<tr><td>'.$b['title'].'</td><td>'.$b['icerik'].'</td><td>'.$kat['title'].'</td><td><a href="haberduzenle.php?id='.$b['_id'].'">duzenle</a></td></tr>';
+echo '<tr><td>'.$b['title'].'</td><td>'.$b['icerik'].'</td><td>'.$kat['title'].'</td><td><a href="newsedit.php?id='.$b['_id'].'">duzenle</a></td></tr>';
 
 }
 echo '</table><br><br><br>';
