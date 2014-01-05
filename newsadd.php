@@ -11,8 +11,9 @@ $kategori=$_POST['kategori'];
 $ekle=array("title"=>$title,"icerik"=>$icerik,"kategori"=>$kategori);
 $news->insert($ekle);
 }
-
-$newslist=$news->find();
+$sayfa=$_GET['sayfa'];
+$goster=10;
+$newslist=$news->find()->skip($goster*$sayfa)->limit($goster);
 echo '<table border="1">
 <tr><td>Title</td><td>icerik</td><td>kategori</td><td>Dasdasdas</td></tr>';
 foreach($newslist as $b){
